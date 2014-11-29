@@ -1,0 +1,35 @@
+(require '[clj-http.client :as client])
+(require '[clj-http :as http])
+(require '[clj-http.client :as client])
+(def public-key 97f295907072a970c5df30d73d1f3816)
+(def public-key "97f295907072a970c5df30d73d1f3816")
+def private-key "ed54a875c0dffad1fa6af84e66ff104434a1c6cc")
+(def private-key "ed54a875c0dffad1fa6af84e66ff104434a1c6cc")
+(def base-url "http://gateway.marvel.com/v1/public")
+"http://gateway.marvel.com:80/v1/public/comics"
+?dateDescriptor=nextWeek&ts= 987&apikey=97f295907072a970c5df30d73d1f3816
+(defn md5
+"Generate a md5 checksum for the given string"
+[token]
+(let [hash-bytes
+(doto (java.security.MessageDigest/getInstance "MD5")
+(.reset)
+(.update (.getBytes token)))]
+(.toString
+(new java.math.BigInteger 1 (.digest hash-bytes)) ; Positive and the size of the number
+16)))
+(md5 "hola")
+(md5 "1" "ed54a875c0dffad1fa6af84e66ff104434a1c6cc" "97f295907072a970c5df30d73d1f3816")
+(md5 (apply str "1" "ed54a875c0dffad1fa6af84e66ff104434a1c6cc" "97f295907072a970c5df30d73d1f3816"))
+(md5 (apply str "987" "ed54a875c0dffad1fa6af84e66ff104434a1c6cc" "97f295907072a970c5df30d73d1f3816"))
+(require '[clj-http.client :as client])
+(client/get "http://google.com")
+(doc get-in)
+(vec 1 2 3)
+(vector 1 2 3)
+(hashmap 1 2 3 4)
+(doc comp)
+(quit)
+(clojure.string/join "&" "a" "b")
+(apply clojure.string/join "&" "a" "b")
+(clojure.string/join ["&" "a" "b"])
