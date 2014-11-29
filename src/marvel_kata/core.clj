@@ -1,13 +1,5 @@
 (ns marvel-kata.core
-  (:require [clj-http.client :as client])
-  (:require [marvel-kata.comics.api-url.generator :as generator])
-  (:require [marvel-kata.comics.api-url.config :as api-url-config]))
-  
-            ; [marvel-kata.api-url.generator :as generator]
-            ; [marvel-kata.api-url.config :as api-url-config]))
-
-(defn get-comics-data-as-json-map [url]
-  (client/get url {:as :json}))
+  (:require [marvel-kata.comics.marvel-api.raw-comic-data :as raw-comic-data]))
 
 (defn path [thumbnail]
   (str (:path thumbnail) "." (:extension thumbnail)))
@@ -30,9 +22,4 @@
 (defn get-comics []
   (create-comics 
     (extract-comics-data
-      (get-comics-data-as-json-map
-        (generator/gen-api-call-url 
-          api-url-config/comics-api-url
-          api-url-config/ts 
-          api-url-config/public-key 
-          api-url-config/private-key)))))
+      (raw-comic-data/get-as-json-map))))

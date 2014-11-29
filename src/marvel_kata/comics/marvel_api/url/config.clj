@@ -1,4 +1,4 @@
-(ns marvel-kata.comics.api-url.config)
+(ns marvel-kata.comics.marvel-api.url.config)
 
 (def ts 987)
 (def public-key "97f295907072a970c5df30d73d1f3816")
