@@ -1,4 +1,4 @@
-(ns marvel-kata.comics.marvel-api.comics
+(ns marvel-kata.comics.marvel-api.repository
   (:require [marvel-kata.comics.marvel-api.raw-comic-data :as raw-comic-data]
             [marvel-kata.comics.marvel-api.comics-mapping :as mapping]))
 

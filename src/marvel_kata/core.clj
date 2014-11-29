@@ -1,5 +1,4 @@
-(ns marvel-kata.core
-  (:require [marvel-kata.comics.marvel-api.comics :as comics]))
+(ns marvel-kata.core)
 
-(defn get-comics []
-  (comics/get-all))
+(defn comics [obtain-comics-fn]
+  (obtain-comics-fn))
