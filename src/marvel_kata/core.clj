@@ -1,7 +1,7 @@
 (ns marvel-kata.core
   (:require [clj-http.client :as client])
-  (:require [marvel-kata.api-url.generator :as generator])
-  (:require [marvel-kata.api-url.config :as api-url-config]))
+  (:require [marvel-kata.comics.api-url.generator :as generator])
+  (:require [marvel-kata.comics.api-url.config :as api-url-config]))
   
             ; [marvel-kata.api-url.generator :as generator]
             ; [marvel-kata.api-url.config :as api-url-config]))

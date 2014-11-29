@@ -1,4 +1,4 @@
-(ns marvel-kata.api-url.generator)
+(ns marvel-kata.comics.api-url.generator)
 
 (declare 
   date-descriptor-parameter
