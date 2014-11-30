@@ -2,7 +2,7 @@
 
 (declare comics)
 
-(defn get-all []
+(defn all-comics-for-date [_]
   comics)
 
 (def ^:private comics

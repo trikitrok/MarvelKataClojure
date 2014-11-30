@@ -1,4 +1,4 @@
-(ns marvel-kata.comics.marvel-api.url.generator)
+(ns marvel-kata.comics.marvel-api.url)
 
 (declare 
   date-descriptor-parameter
@@ -9,7 +9,7 @@
   hash-parameter
   gen-api-call-parameters)
 
-(defn gen-api-call-url [comics-api-url ts public-key private-key]
+(defn generate [comics-api-url ts public-key private-key]
   (clojure.string/join
     "?"
     [comics-api-url

@@ -1,13 +1,13 @@
 (ns marvel-kata.comics.marvel-api.raw-comic-data
   (:require [clj-http.client :as client]
-            [marvel-kata.comics.marvel-api.url.generator :as generator]
-            [marvel-kata.comics.marvel-api.url.config :as api-url-config]))
+            [marvel-kata.comics.marvel-api.url :as api-url]
+            [marvel-kata.comics.marvel-api.config :as api-config]))
 
-(defn get-as-json-map []
+(defn get-as-json-map [timestamp]
   (client/get 
-    (generator/gen-api-call-url 
-      api-url-config/comics-api-url
-      api-url-config/ts 
-      api-url-config/public-key 
-      api-url-config/private-key) 
+    (api-url/generate 
+      api-config/comics-api-url
+      timestamp 
+      api-config/public-key 
+      api-config/private-key) 
     {:as :json}))

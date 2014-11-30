@@ -11,9 +11,11 @@
   (fact 
     "it can obtain comics from marvel api repository"
     (comics 
-      marvel-api-repository/get-all) => expected-comics/from-marvel-api-repository)
+      marvel-api-repository/all-comics-for-date 
+      987) => expected-comics/from-marvel-api-repository)
   
   (fact 
     "it can obtain comics from in memory repository"
     (comics 
-      in-memory-repository/get-all) => expected-comics/from-in-memory-repository))
+      in-memory-repository/all-comics-for-date 
+      987) => expected-comics/from-in-memory-repository))
