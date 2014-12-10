@@ -10,11 +10,14 @@
   (mapping/to-comics
     (get-as-json-map timestamp)))
 
+(defn comics-url [timestamp]
+  (api-url/generate 
+    api-config/comics-api-url
+    timestamp 
+    api-config/public-key 
+    api-config/private-key))
+
 (defn get-as-json-map [timestamp]
   (client/get 
-    (api-url/generate 
-      api-config/comics-api-url
-      timestamp 
-      api-config/public-key 
-      api-config/private-key) 
+    (comics-url timestamp)
     {:as :json}))
